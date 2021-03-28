@@ -4,10 +4,10 @@ import java.io.InputStreamReader;
 
 public class Task1_1 {
     public static void main(String[] args) throws IOException {
-        int count = 0;
         System.out.println("Вводите по одному целому числу и нажимайте Enter, " +
                 "чтобы получить результат введите пустую строчку и нажмите Enter");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int count = 0;
         while (true) {
             String str = reader.readLine();
             if (str.equals("")) {
