@@ -8,12 +8,12 @@ public class Task1 {
         System.out.println("Ведите " + a + " целых чисел:");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int count = 0;
-            for (int i = 0; i < a; i++) {
-                String inputLine = reader.readLine();
-                if (Integer.parseInt(inputLine) > 0) {
-                    count++;
-                }
+        for (int i = 0; i < a; i++) {
+            String inputLine = reader.readLine();
+            if (Integer.parseInt(inputLine) > 0) {
+                count++;
             }
+        }
         System.out.println("Количество положительных чисел = " + count);
     }
 }
