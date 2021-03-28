@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 public class Task1 {
     public static void main(String[] args) throws IOException {
         int a = 5;
-        System.out.println("Ведите " + a + " целых чисел:");
+        System.out.println("Введите " + a + " целых чисел:");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int count = 0;
         for (int i = 0; i < a; i++) {
