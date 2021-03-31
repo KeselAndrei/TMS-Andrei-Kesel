@@ -6,15 +6,14 @@ public class Homework {
         System.out.println(average(new int[]{0, -2, 3, -1, 5}));
         System.out.println(max(new int[]{1, 2, 3, 4, 5, 100, 99}));
         System.out.println(calculateHypotenuse(3, 4));
-
     }
 
     public static int sum(int a, int b) {
-        int summa = a + b;
+        long summa = (long) a + (long) b;
         if (summa > Integer.MAX_VALUE) {
             return -1;
         } else {
-            return summa;
+            return (int) summa;
         }
     }
 
@@ -24,25 +23,29 @@ public class Homework {
 
     public static double average(int[] array) {
         int summa = 0;
-        for (int i = 0; i < array.length; i++) {
-            summa += array[i];
+        for (int i : array) {
+            summa += i;
         }
-        double aver = summa / array.length;
-        return aver;
+        return (double) summa / array.length;
     }
 
     public static int max(int[] array) {
-        int max = array[0];
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > max) {
-                max = array[i];
+        int max;
+        try {
+            max = array[0];
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] > max) {
+                    max = array[i];
+                }
             }
+            return max;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.print("Колличество элементов в массиве = ");
+            return 0;
         }
-        return max;
     }
 
     public static double calculateHypotenuse(int a, int b) {
-        double hypotenuse = Math.sqrt(a * a + b * b);
-        return hypotenuse;
+        return Math.sqrt(a * a + b * b);
     }
 }
