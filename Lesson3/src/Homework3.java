@@ -9,8 +9,6 @@ public class Homework3 {
         System.out.println(calculateCountOfOddElementsInMatrix(new int[]{1, 2, 3, 4, 5, 6}));
         calculateSumOfDiagonalElements();
         countDevs(103);
-        countDevs(10114);
-        countDevs(114);
         foobar(6);
         foobar(10);
         foobar(15);
@@ -63,7 +61,7 @@ public class Homework3 {
         int last = count % 10;
         if (last == 1 && count != 11) {
             System.out.println(count + programer);
-        } else if (last >= 2 && last < 5 && count != 12 && count != 13 && count != 14 && count < 10014) {
+        } else if (last >= 2 && last < 5 && count != 12 && count != 13 && count != 14) {
             System.out.println(count + programer + "а");
         } else {
             System.out.println(count + programer + "ов");
