@@ -8,7 +8,20 @@ public class Homework3 {
         System.out.println(operation(0));
         System.out.println(calculateCountOfOddElementsInMatrix(new int[]{1, 2, 3, 4, 5, 6}));
         calculateSumOfDiagonalElements();
+        countDevs(1);
+        countDevs(2);
+        countDevs(3);
+        countDevs(4);
+        countDevs(5);
+        countDevs(10);
+        countDevs(11);
+        countDevs(13);
+        countDevs(15);
+        countDevs(21);
         countDevs(103);
+        countDevs(114);
+        countDevs(10114);
+        countDevs(10002);
         foobar(6);
         foobar(10);
         foobar(15);
@@ -58,13 +71,71 @@ public class Homework3 {
 
     public static void countDevs(int count) {
         String programer = " программист";
-        int last = count % 10;
-        if (last == 1 && count != 11) {
-            System.out.println(count + programer);
-        } else if (last >= 2 && last < 5 && count != 12 && count != 13 && count != 14) {
-            System.out.println(count + programer + "а");
-        } else {
-            System.out.println(count + programer + "ов");
+        int last;
+        if (0 <= count && count <= 99) {
+            last = count % 10;
+            if (last == 1 && count != 11) {
+                System.out.println(count + programer);
+            } else if (last >= 2 && last < 5 && count != 12 && count != 13 && count != 14) {
+                System.out.println(count + programer + "а");
+            } else {
+                System.out.println(count + programer + "ов");
+            }
+        } else if (100 <= count && count <= 999) {
+            last = count % 100;
+            if (last > 11 && last < 19) {
+                System.out.println(count + programer + "ов");
+            } else if (last % 10 > 1 && last < 5) {
+                System.out.println(count + programer + "а");
+            } else if (last % 10 == 1 && last != 11) {
+                System.out.println(count + programer);
+            } else {
+                System.out.println(count + programer + "ов");
+            }
+        } else if (1000 <= count && count <= 9999) {
+            last = count % 1000;
+            if (last > 11 && last < 19) {
+                System.out.println(count + programer + "ов");
+            } else if (last % 10 >= 2 && last < 5) {
+                System.out.println(count + programer + "а");
+            } else if (last % 10 == 1 && last != 11) {
+                System.out.println(count + programer);
+            } else {
+                System.out.println(count + programer + "ов");
+            }
+        } else if (10000 <= count && count <= 99999) {
+            last = count % 10000;
+            if (last > 11 && last < 19) {
+                System.out.println(count + programer + "ов");
+            } else if (last % 10 >= 2 && last < 5) {
+                System.out.println(count + programer + "а");
+            } else if (last % 10 == 1 && last != 11) {
+                System.out.println(count + programer);
+            } else {
+                System.out.println(count + programer + "ов");
+            }
+        } else if (100000 <= count && count <= 999999) {
+            last = count % 100000;
+            if (last > 11 && last < 19) {
+                System.out.println(count + programer + "ов");
+            } else if (last % 10 >= 2 && last < 5) {
+                System.out.println(count + programer + "а");
+            } else if (last % 10 == 1 && last != 11) {
+                System.out.println(count + programer);
+            } else {
+                System.out.println(count + programer + "ов");
+            }
+        } else if (1000000 <= count && count <= 9999999) {
+            last = count % 1000000;
+            if (last > 11 && last < 19) {
+                System.out.println(count + programer + "ов");
+            } else if (last % 10 >= 2 && last < 5) {
+                System.out.println(count + programer + "а");
+            } else if (last % 10 == 1 && last != 11) {
+                System.out.println(count + programer);
+            } else {
+                System.out.println(count + programer + "ов");
+            }
         }
     }
 
