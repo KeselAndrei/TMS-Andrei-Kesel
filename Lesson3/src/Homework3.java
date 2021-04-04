@@ -57,7 +57,7 @@ public class Homework3 {
     }
 
     public static void countDevs(int count) {
-        String programer = " програмист";
+        String programer = " программист";
         int last = count % 10;
         if (last == 1 && count != 11) {
             System.out.println(count + programer);
@@ -73,7 +73,7 @@ public class Homework3 {
             System.out.println("foo");
         } else if (number % 5 == 0 && number % 3 != 0) {
             System.out.println("bar");
-        } else {
+        } else if (number % 3 == 0 && number % 5 == 0) {
             System.out.println("foobar");
         }
     }
