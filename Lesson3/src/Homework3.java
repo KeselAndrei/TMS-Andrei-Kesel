@@ -28,8 +28,8 @@ public class Homework3 {
             number = scanner.nextInt();
         } while (number <= 0);
         int[] array = new int[number];
+        Random random = new Random();
         for (int i = 0; i < array.length; i++) {
-            Random random = new Random();
             array[i] = random.nextInt(100);
             System.out.print(array[i] + " ");
         }
@@ -38,11 +38,11 @@ public class Homework3 {
 
     public static int operation(int number) {
         if (number > 0) {
-            return number += 1;
+            return number + 1;
         } else if (number < 0) {
-            return number -= 2;
+            return number - 2;
         } else {
-            return number = 10;
+            return 10;
         }
     }
 
@@ -58,9 +58,10 @@ public class Homework3 {
 
     public static void countDevs(int count) {
         String programer = " програмист";
-        if (count % 10 == 1 && count != 11) {
+        int last = count % 10;
+        if (last == 1 && count != 11) {
             System.out.println(count + programer);
-        } else if (count % 10 == 2 && count != 12 || count % 10 == 3 && count != 13 || count % 10 == 4 && count != 14) {
+        } else if (last >= 2 && last < 5 && count != 12 && count != 13 && count != 14) {
             System.out.println(count + programer + "а");
         } else {
             System.out.println(count + programer + "ов");
@@ -72,7 +73,7 @@ public class Homework3 {
             System.out.println("foo");
         } else if (number % 5 == 0 && number % 3 != 0) {
             System.out.println("bar");
-        } else if (number % 3 == 0 && number % 5 == 0) {
+        } else {
             System.out.println("foobar");
         }
     }
@@ -99,7 +100,7 @@ public class Homework3 {
             }
             width = widthScaner.nextInt();
             height = heightScaner.nextInt();
-        } while (width <= 0 && height <= 0 || width <= 0 || height <= 0);
+        } while (width <= 0 || height <= 0);
         int[][] array = new int[width][height];
         Random random = new Random();
         int summaOfDiagonal = 0;
@@ -138,7 +139,7 @@ public class Homework3 {
             }
             width = widthScaner.nextInt();
             height = heightScaner.nextInt();
-        } while (width <= 0 && height <= 0 || width <= 0 || height <= 0);
+        } while (width <= 0 || height <= 0);
         int[][] array = new int[width][height];
         Random random = new Random();
         for (int i = 0; i < array.length; i++) {
@@ -148,11 +149,11 @@ public class Homework3 {
             }
             System.out.println();
         }
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                if (array[i][j] % 3 == 0 && array[i][j] % 7 == 0 || array[i][j] % 3 == 0 && array[i][j] % 7 != 0) {
+        for (int[] i : array) {
+            for (int j : i) {
+                if (j % 3 == 0) {
                     System.out.print("+ ");
-                } else if (array[i][j] % 7 == 0 && array[i][j] % 3 != 0) {
+                } else if (j % 7 == 0) {
                     System.out.print("- ");
                 } else {
                     System.out.print("* ");
