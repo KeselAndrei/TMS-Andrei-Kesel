@@ -23,5 +23,11 @@ class Homework3_void_countDevsTest {
         Assertions.assertEquals("24 программиста", Homework3_void_countDevs.countDevs(24));
         Assertions.assertEquals("25 программистов", Homework3_void_countDevs.countDevs(25));
         Assertions.assertEquals("103 программиста", Homework3_void_countDevs.countDevs(103));
+        Assertions.assertEquals("10002 программиста", Homework3_void_countDevs.countDevs(10002));
+        Assertions.assertEquals("10114 программистов", Homework3_void_countDevs.countDevs(10114));
+        Assertions.assertEquals("100112 программистов", Homework3_void_countDevs.countDevs(100112));
+        Assertions.assertEquals("1000114 программистов", Homework3_void_countDevs.countDevs(1000114));
+        Assertions.assertEquals("10121 программист", Homework3_void_countDevs.countDevs(10121));
+        Assertions.assertEquals("1000115 программистов", Homework3_void_countDevs.countDevs(1000115));
     }
 }
