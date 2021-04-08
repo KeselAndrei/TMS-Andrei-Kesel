@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,8 +8,8 @@ public class Homework4 {
         System.out.println(summ(2, 4));
         System.out.println(summ(-2, -4));
         System.out.println(summ(-2, 4));
-        mass();
-        maxElement();
+        mass(new int[100]);
+        maxElement(new int[12]);
         array();
         maxElementChange();
         printMatrix();
@@ -16,59 +17,49 @@ public class Homework4 {
         countNumbers(50);
         countNumbers(-5000);
         countNumbers(500000000);
+        countNumbers(0);
+        differentElements(new int[]{0, 3, 46, 3, 2, 1, 2});
     }
 
     public static void cellDivision() {
         int count = 1;
         for (int i = 0; i <= 24; i += 3) {
-            if (i != 0 && i % 3 == 0) {
+            if (i != 0) {
                 count = count * 2;
                 System.out.print(count + " ");
             }
         }
         System.out.println();
+        System.out.println();
     }
 
     public static int summ(int a, int b) {
         int sum = 0;
-        if (a < 0 && b < 0) {
-            for (int i = 0; i < -a; i++) {
-                sum += -b;
-            }
-            return sum;
-        } else if (a > 0 && b > 0) {
-            for (int i = 0; i < a; i++) {
-                sum += b;
-            }
-            return sum;
-        } else for (int i = 0; i < Math.max(a, b); i++) {
-            sum += Math.min(a, b);
+        for (int i = 0; i < Math.abs(a); i++) {
+            sum += Math.abs(b);
         }
-        return sum;
+        if (a < 0 && b > 0 || b < 0 && a > 0) {
+            return -sum;
+        } else {
+            return sum;
+        }
     }
 
-    public static void mass() {
-        int a = 0;
-        for (int i = 1; i <= 99; i++) {
-            if (i % 2 != 0) a++;
+    public static void mass(int[] array) {
+        System.out.println();
+        for (int i = 1; i <= 100; i += 2) {
+            array[i] = i;
+            System.out.print(array[i] + " ");
         }
-        int[] mas = new int[a];
-        for (int i = 1, b = 0; i <= 99; i++) {
-            if (i % 2 != 0) {
-                mas[b] = i;
-                System.out.print(mas[b] + " ");
-                b++;
-            }
+        System.out.println();
+        for (int j = array.length - 1; j > 0; j -= 2) {
+            System.out.print(array[j] + " ");
         }
-        System.out.println(" ");
-        for (int i = mas.length - 1; i >= 0; i--) {
-            System.out.print(mas[i] + " ");
-        }
+        System.out.println();
         System.out.println();
     }
 
-    public static void maxElement() {
-        int[] mass = new int[12];
+    public static void maxElement(int[] mass) {
         Random random = new Random();
         for (int i = 0; i < mass.length; i++) {
             mass[i] = random.nextInt(16);
@@ -76,19 +67,17 @@ public class Homework4 {
         }
         System.out.println();
         int max = mass[0];
+        int maxIndex = 0;
         for (int j = 0; j < mass.length; j++) {
             if (max < mass[j]) {
                 max = mass[j];
             }
-        }
-        int maxIndex = 0;
-        for (int i = 0; i < mass.length; i++) {
-            if (mass[i] == max) {
-                maxIndex = i + 1;
+            if (mass[j] == max) {
+                maxIndex = j;
             }
-
         }
         System.out.println("Максимальный элемент в массиве равен: " + max + " индекс его последнего вхождения равен: " + maxIndex);
+        System.out.println();
     }
 
     public static void array() {
@@ -105,6 +94,7 @@ public class Homework4 {
             }
             System.out.print(array[i] + " ");
         }
+        System.out.println();
         System.out.println();
     }
 
@@ -129,6 +119,7 @@ public class Homework4 {
         }
         System.out.println();
         System.out.println("Максимальный элемент равен - " + max);
+        System.out.println();
     }
 
     public static void printMatrix() {
@@ -152,33 +143,54 @@ public class Homework4 {
             }
             System.out.println();
         }
-        System.out.println("_________________________________");
-
+        System.out.println();
+        int[][] array1 = new int[array.length][array.length];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[j][i] + " ");
+                array1[j][i] = array[i][j];
+            }
+        }
+        for (int j = 0; j < array1.length; j++) {
+            for (int k = 0; k < array1[j].length; k++) {
+                System.out.print(array1[j][k] + " ");
             }
             System.out.println();
         }
         System.out.println();
     }
 
-
     public static void countNumbers(int a) {
         int count = (a == 0) ? 1 : 0;
         int b = a;
-        if (a < 0) {
-            while (b != 0) {
-                count++;
-                b /= 10;
-            }
-            System.out.println(a + " это отрицательное число, количество цифр = " + count);
+        while (b != 0) {
+            count++;
+            b /= 10;
+        }
+        positiveOrNegative(a, count);
+    }
+
+    public static void positiveOrNegative(int b, int count) {
+        if (b < 0) {
+            System.out.println(b + " это отрицательное число, количество цифр = " + count);
         } else if (b > 0) {
-            while (b != 0) {
+            System.out.println(b + " это положительное число, количество цифр = " + count);
+        } else {
+            System.out.println(b + " это Ноль, количество цифр = 1");
+        }
+    }
+
+    public static void differentElements(int[] array) {
+        System.out.println();
+        Arrays.sort(array);
+        int count = 0;
+        int length = array.length;
+        for (int i = 0, j = i + 1; i < length && j < length; i++, j++) {
+            if (array[i] == array[j]) {
                 count++;
-                b /= 10;
+            } else if (count > 0) {
+                System.out.print("Массив имеет повторяющиеся элементы " + array[i] + ", ");
+                count = 0;
             }
-            System.out.println(a + " это положительное число, количество цифр = " + count);
         }
     }
 }
