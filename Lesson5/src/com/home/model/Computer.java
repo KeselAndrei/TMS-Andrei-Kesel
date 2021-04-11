@@ -19,10 +19,8 @@ public class Computer {
     public String ram;
     public String ssd;
     public int resource;
-    public int count = 0;
     public int inScanner;
-    public boolean test = true;
-    public int randomInt;
+    public boolean hasBurned = false;
 
     public Computer(String cpu, String ram, String ssd, int resource) {
         this.cpu = cpu;
@@ -48,25 +46,23 @@ public class Computer {
     }
 
     public void on() {
-        if (test) {
+        if (!hasBurned) {
             count();
             clickOnOff();
-            random();
         }
         testOn();
     }
 
     public void off() {
-        if (test) {
+        if (!hasBurned) {
             count();
             clickOnOff();
-            random();
         }
         testOff();
     }
 
     public void count() {
-        count++;
+        resource--;
     }
 
     public void clickOnOff() {
@@ -81,34 +77,34 @@ public class Computer {
         } while (inScanner < 0 || inScanner > 1);
     }
 
-    public void random() {
+    public int getRandomValue() {
         Random random = new Random();
-        randomInt = random.nextInt(2);
+        return random.nextInt(2);
     }
 
     public void testOn() {
-        if (inScanner == randomInt && test && count <= resource) {
-            System.out.println("Компьютер выключается");
+        if (inScanner == getRandomValue() && !hasBurned && resource != 0) {
+            System.out.println("Компьютер включается");
             off();
-        } else if (count > resource && test) {
+        } else if (resource == 0 && !hasBurned) {
             System.out.println("Компьютер сгорел!");
-            test = false;
+            hasBurned = true;
         } else {
             System.out.println("Компьютер сгорел!");
-            test = false;
+            hasBurned = true;
         }
     }
 
     public void testOff() {
-        if (inScanner == randomInt && test && count <= resource) {
-            System.out.println("Компьютер включается");
+        if (inScanner == getRandomValue() && !hasBurned && resource != 0) {
+            System.out.println("Компьютер выключается");
             on();
-        } else if (count > resource && test) {
+        } else if (resource == 0 && !hasBurned) {
             System.out.println("Компьютер сгорел!");
-            test = false;
+            hasBurned = true;
         } else {
             System.out.println("Компьютер сгорел!");
-            test = false;
+            hasBurned = true;
         }
     }
 }
