@@ -13,14 +13,16 @@ public class MilitaryOffice {
         this.personRegistry = personRegistry;
     }
 
+    private boolean chek(Person person) {
+        return person.getAge() >= 18 && person.getAge() <= 27 && person.getSex().equals(Person.MALE);
+    }
 
     public void getNameMilitaryService(PersonRegistry personRegistry) {
         System.out.println("Имена людей годных к военной службе на текущий момент времени: ");
         for (int i = 0; i < personRegistry.getArrayList().size(); i++) {
-            if (personRegistry.getArrayList().get(i).getAge() >= 18 &&
-                    personRegistry.getArrayList().get(i).getAge() <= 27 &&
-                    personRegistry.getArrayList().get(i).getSex().equals(Person.MALE)) {
-                System.out.println(personRegistry.getArrayList().get(i).getName());
+            Person person = personRegistry.getArrayList().get(i);
+            if (chek(person)) {
+                System.out.println(person.getName());
             }
         }
         System.out.println();
@@ -28,10 +30,8 @@ public class MilitaryOffice {
 
     public void getCountMilitaryServiceFromMinsk(PersonRegistry personRegistry) {
         for (int i = 0; i < personRegistry.getArrayList().size(); i++) {
-            if (personRegistry.getArrayList().get(i).getAddress().getCity().equals("Минск") &&
-                    personRegistry.getArrayList().get(i).getAge() >= 18 &&
-                    personRegistry.getArrayList().get(i).getAge() <= 27 &&
-                    personRegistry.getArrayList().get(i).getSex().equals(Person.MALE)) {
+            Person person = personRegistry.getArrayList().get(i);
+            if (person.getAddress().getCity().equals("Минск") && chek(person)) {
                 count++;
             }
         }
@@ -42,9 +42,8 @@ public class MilitaryOffice {
     public void getAgeMilitaryService(PersonRegistry personRegistry) {
         count = 0;
         for (int i = 0; i < personRegistry.getArrayList().size(); i++) {
-            if (personRegistry.getArrayList().get(i).getAge() >= 25 &&
-                    personRegistry.getArrayList().get(i).getAge() <= 27 &&
-                    personRegistry.getArrayList().get(i).getSex().equals(Person.MALE)) {
+            Person person = personRegistry.getArrayList().get(i);
+            if (chek(person) && person.getAge() >= 25 && person.getAge() <= 27) {
                 count++;
             }
         }
@@ -55,10 +54,8 @@ public class MilitaryOffice {
     public void getNameMilitaryServiceAlexander(PersonRegistry personRegistry) {
         count = 0;
         for (int i = 0; i < personRegistry.getArrayList().size(); i++) {
-            if (personRegistry.getArrayList().get(i).getName().equals("Александр") &&
-                    personRegistry.getArrayList().get(i).getAge() >= 18 &&
-                    personRegistry.getArrayList().get(i).getAge() <= 27 &&
-                    personRegistry.getArrayList().get(i).getSex().equals(Person.MALE)) {
+            Person person = personRegistry.getArrayList().get(i);
+            if (person.getName().equals("Александр") && chek(person)) {
                 count++;
             }
         }

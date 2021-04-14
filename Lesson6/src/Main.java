@@ -37,7 +37,7 @@ public class Main {
         arrayList.add(person6);
         Person person7 = new Person("Александр", 25, Person.MALE, new Address("Беларусь", "Минск"));
         arrayList.add(person7);
-        Person person8 = new Person("Александр", 27, Person.MALE, new Address("Беларусь", "Минск"));
+        Person person8 = new Person("Александр", 18, Person.MALE, new Address("Беларусь", "Минск"));
         arrayList.add(person8);
         PersonRegistry personRegistry = new PersonRegistry(arrayList);
         MilitaryOffice militaryOffice = new MilitaryOffice(personRegistry);
