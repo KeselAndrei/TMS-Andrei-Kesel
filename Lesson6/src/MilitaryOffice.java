@@ -28,37 +28,37 @@ public class MilitaryOffice {
         System.out.println();
     }
 
-    public void getCountMilitaryServiceFromMinsk(PersonRegistry personRegistry) {
+    public void getCountMilitaryServiceFromMinsk(String city) {
         for (int i = 0; i < personRegistry.getArrayList().size(); i++) {
             Person person = personRegistry.getArrayList().get(i);
-            if (person.getAddress().getCity().equals("Минск") && chek(person)) {
+            if (person.getAddress().getCity().equals(city) && chek(person)) {
                 count++;
             }
         }
-        System.out.println("Количество годных призывников в городе Минске = " + count);
+        System.out.println("Количество годных призывников в городе " + city + " = " + count);
         System.out.println();
     }
 
-    public void getAgeMilitaryService(PersonRegistry personRegistry) {
+    public void getAgeMilitaryService(int minAge, int maxAge) {
         count = 0;
         for (int i = 0; i < personRegistry.getArrayList().size(); i++) {
             Person person = personRegistry.getArrayList().get(i);
-            if (chek(person) && person.getAge() >= 25 && person.getAge() <= 27) {
+            if (chek(person) && person.getAge() >= minAge && person.getAge() <= maxAge) {
                 count++;
             }
         }
-        System.out.println("Количество призывников от 25 до 27 лет = " + count);
+        System.out.println("Количество призывников от " + minAge + " до " + maxAge + " лет = " + count);
         System.out.println();
     }
 
-    public void getNameMilitaryServiceAlexander(PersonRegistry personRegistry) {
+    public void getNameMilitaryServiceAlexander(String name) {
         count = 0;
         for (int i = 0; i < personRegistry.getArrayList().size(); i++) {
             Person person = personRegistry.getArrayList().get(i);
-            if (person.getName().equals("Александр") && chek(person)) {
+            if (person.getName().equals(name) && chek(person)) {
                 count++;
             }
         }
-        System.out.println("Количество призывников у которых имя Александр = " + count);
+        System.out.println("Количество призывников у которых имя " + name + " = " + count);
     }
 }

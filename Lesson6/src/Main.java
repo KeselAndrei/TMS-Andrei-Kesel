@@ -42,8 +42,8 @@ public class Main {
         PersonRegistry personRegistry = new PersonRegistry(arrayList);
         MilitaryOffice militaryOffice = new MilitaryOffice(personRegistry);
         militaryOffice.getNameMilitaryService(personRegistry);
-        militaryOffice.getCountMilitaryServiceFromMinsk(personRegistry);
-        militaryOffice.getAgeMilitaryService(personRegistry);
-        militaryOffice.getNameMilitaryServiceAlexander(personRegistry);
+        militaryOffice.getCountMilitaryServiceFromMinsk("Минск");
+        militaryOffice.getAgeMilitaryService(18, 27);
+        militaryOffice.getNameMilitaryServiceAlexander("Александр");
     }
 }
