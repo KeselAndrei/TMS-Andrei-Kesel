@@ -20,7 +20,6 @@ public class MilitaryOffice {
                 System.out.println(person.getName());
             }
         }
-        System.out.println();
     }
 
     public int getCountMilitaryServiceFromMinsk(String city) {
@@ -31,7 +30,6 @@ public class MilitaryOffice {
                 count++;
             }
         }
-        System.out.println();
         return count;
     }
 
@@ -39,11 +37,10 @@ public class MilitaryOffice {
         int count = 0;
         for (int i = 0; i < personRegistry.getArrayList().size(); i++) {
             Person person = personRegistry.getArrayList().get(i);
-            if (person.getSex().equals(Person.MALE) && person.getAge() >= minAge && person.getAge() <= maxAge) {
+            if (person.getSex().equals(Person.MALE) && person.getAge() >= minAge && person.getAge() < maxAge) {
                 count++;
             }
         }
-        System.out.println();
         return count;
     }
 
@@ -55,7 +52,6 @@ public class MilitaryOffice {
                 count++;
             }
         }
-        System.out.println();
         return count;
     }
 }
