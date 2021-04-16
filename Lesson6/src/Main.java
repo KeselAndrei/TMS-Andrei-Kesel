@@ -41,9 +41,12 @@ public class Main {
         arrayList.add(person8);
         PersonRegistry personRegistry = new PersonRegistry(arrayList);
         MilitaryOffice militaryOffice = new MilitaryOffice(personRegistry);
-        militaryOffice.getNameMilitaryService(personRegistry);
-        militaryOffice.getCountMilitaryServiceFromMinsk("Минск");
-        militaryOffice.getAgeMilitaryService(18, 27);
-        militaryOffice.getNameMilitaryServiceAlexander("Александр");
+        militaryOffice.getNameMilitaryService();
+        System.out.println("Количество годных призывников в городе Минске = " +
+                militaryOffice.getCountMilitaryServiceFromMinsk("Минск"));
+        System.out.println("Количество призывников от 18 до 27 лет = " +
+                militaryOffice.getAgeMilitaryService(18, 27));
+        System.out.println("Количество призывников у которых имя Александр = " +
+                militaryOffice.getNameMilitaryServiceAlexander("Александр"));
     }
 }

@@ -1,64 +1,61 @@
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
+@AllArgsConstructor
 public class MilitaryOffice {
     private PersonRegistry personRegistry;
-    private int count = 0;
 
-    public MilitaryOffice(PersonRegistry personRegistry) {
-        this.personRegistry = personRegistry;
+    private boolean hasFitMilitaryService(Person person) {
+        return person.getAge() >= 18 && person.getAge() < 27 && person.getSex().equals(Person.MALE);
     }
 
-    private boolean chek(Person person) {
-        return person.getAge() >= 18 && person.getAge() <= 27 && person.getSex().equals(Person.MALE);
-    }
-
-    public void getNameMilitaryService(PersonRegistry personRegistry) {
+    public void getNameMilitaryService() {
         System.out.println("Имена людей годных к военной службе на текущий момент времени: ");
         for (int i = 0; i < personRegistry.getArrayList().size(); i++) {
             Person person = personRegistry.getArrayList().get(i);
-            if (chek(person)) {
+            if (hasFitMilitaryService(person)) {
                 System.out.println(person.getName());
             }
         }
         System.out.println();
     }
 
-    public void getCountMilitaryServiceFromMinsk(String city) {
+    public int getCountMilitaryServiceFromMinsk(String city) {
+        int count = 0;
         for (int i = 0; i < personRegistry.getArrayList().size(); i++) {
             Person person = personRegistry.getArrayList().get(i);
-            if (person.getAddress().getCity().equals(city) && chek(person)) {
+            if (person.getAddress().getCity().equals(city) && hasFitMilitaryService(person)) {
                 count++;
             }
         }
-        System.out.println("Количество годных призывников в городе " + city + " = " + count);
         System.out.println();
+        return count;
     }
 
-    public void getAgeMilitaryService(int minAge, int maxAge) {
-        count = 0;
+    public int getAgeMilitaryService(int minAge, int maxAge) {
+        int count = 0;
         for (int i = 0; i < personRegistry.getArrayList().size(); i++) {
             Person person = personRegistry.getArrayList().get(i);
-            if (chek(person) && person.getAge() >= minAge && person.getAge() <= maxAge) {
+            if (person.getSex().equals(Person.MALE) && person.getAge() >= minAge && person.getAge() <= maxAge) {
                 count++;
             }
         }
-        System.out.println("Количество призывников от " + minAge + " до " + maxAge + " лет = " + count);
         System.out.println();
+        return count;
     }
 
-    public void getNameMilitaryServiceAlexander(String name) {
-        count = 0;
+    public int getNameMilitaryServiceAlexander(String name) {
+        int count = 0;
         for (int i = 0; i < personRegistry.getArrayList().size(); i++) {
             Person person = personRegistry.getArrayList().get(i);
-            if (person.getName().equals(name) && chek(person)) {
+            if (person.getName().equals(name) && hasFitMilitaryService(person)) {
                 count++;
             }
         }
-        System.out.println("Количество призывников у которых имя " + name + " = " + count);
+        System.out.println();
+        return count;
     }
 }
