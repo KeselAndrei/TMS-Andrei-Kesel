@@ -20,8 +20,8 @@ public class LandTransport extends Transport {
     public String getInfo() {
         String info = "Мощность автомобиля состовляет " + getPowerLs() + " л.с., " + "максимальная скорость,\n" +
                 "которую развивает автомобиль " + getMaxSpeed() + " км/ч, " + "масса автомобиля не превышает\n" +
-                getWeight() + " кг, " + "марка автомобиля " + getModel() + ", у автомобиля " + getCountWheels() +
-                " колеса,\n" + "расход топлива на 100 км составляет " + getFuelConsumption() + " литров";
+                getWeight() + " кг, " + "марка автомобиля " + getModel() + ", у автомобиля " + countWheels +
+                " колеса,\n" + "расход топлива на 100 км составляет " + fuelConsumption + " литров";
         return info;
     }
 }

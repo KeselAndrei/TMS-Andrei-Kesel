@@ -18,11 +18,11 @@ public class FreightTransport extends LandTransport {
 
     @Override
     public String getInfo() {
-        return super.getInfo() + ", грузоподъемность автомобиля составляет " + getCarryingCapacity() + " тонны";
+        return super.getInfo() + ", грузоподъемность автомобиля составляет " + carryingCapacity + " тонны";
     }
 
-    String getCheckOfCapacity(int carryingCapacity) {
-        if (carryingCapacity <= getCarryingCapacity()) {
+    String getCheckOfCapacity(int capacity) {
+        if (capacity <= carryingCapacity) {
             return "Грузовик загружен!";
         } else {
             return "Вам нужен грузовик побольше! ";

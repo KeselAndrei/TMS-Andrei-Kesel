@@ -21,12 +21,11 @@ public class MilitaryTransport extends AirTransport {
     @Override
     public String getInfo() {
         return super.getInfo() + "наличие системы катапультирования " + chekEjectionSystem +
-                ", количество ракет на борту равно " + getCountRockets();
+                ", количество ракет на борту равно " + countRockets;
     }
 
     String getShot() {
-        boolean countRockets = getCountRockets() > 0;
-        if (countRockets) {
+        if (countRockets > 0) {
             return "Ракета пошла...";
         } else {
             return "Боеприпасы отсутствуют";
@@ -34,8 +33,7 @@ public class MilitaryTransport extends AirTransport {
     }
 
     String getBailout() {
-        boolean chekEjectionSystem = isChekEjectionSystem();
-        if (chekEjectionSystem) {
+        if (isChekEjectionSystem()) {
             return "Катапультирование прошло успешно!!!";
         } else {
             return "У Вас нет системы катапультирования!!!";

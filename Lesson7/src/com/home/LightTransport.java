@@ -20,7 +20,7 @@ public class LightTransport extends LandTransport {
 
     @Override
     public String getInfo() {
-        return super.getInfo() + ", тип кузова " + getBodyType() + ",\nколичество пассажиров " + getCountPassengers() +
+        return super.getInfo() + ", тип кузова " + bodyType + ",\nколичество пассажиров " + countPassengers +
                 " мощность в кВт = " + getPowerCalculation();
     }
 

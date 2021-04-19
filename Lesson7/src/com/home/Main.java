@@ -12,16 +12,16 @@ public class Main {
                 15, 3);
         System.out.println(freightTransport.getInfo());
         System.out.println();
-        System.out.println(freightTransport.getCheckOfCapacity(4));
+        System.out.println(freightTransport.getCheckOfCapacity(3));
         System.out.println("____________________________________________________________________________________________");
         CivilTransport civilTransport = new CivilTransport(1000, 1000, 10000, "Boing",
                 30, 500, 100, false);
         System.out.println(civilTransport.getInfo());
         System.out.println();
-        System.out.println(civilTransport.getCheckOfPassengersCount(10));
+        System.out.println(civilTransport.getCheckOfPassengersCount(101));
         System.out.println("____________________________________________________________________________________________");
         MilitaryTransport militaryTransport = new MilitaryTransport(900, 700, 10000, "Миг - 29",
-                20, 250, false, 0);
+                20, 250, false, 1);
         System.out.println();
         System.out.println(militaryTransport.getInfo());
         System.out.println();

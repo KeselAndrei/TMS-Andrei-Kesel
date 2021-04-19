@@ -20,12 +20,12 @@ public class CivilTransport extends AirTransport {
 
     @Override
     public String getInfo() {
-        return super.getInfo() + "количество пассажиров перевозимых на борту не более " + getCountPassengers() +
+        return super.getInfo() + "количество пассажиров перевозимых на борту не более " + countPassengers +
                 ", наличие бизнес класса " + chekBusinessClass;
     }
 
-    String getCheckOfPassengersCount(int countPassengers) {
-        if (countPassengers <= getCountPassengers()) {
+    String getCheckOfPassengersCount(int countPas) {
+        if (countPas <= countPassengers) {
             return "Самолет заполнен!";
         } else {
             return "Вам нужен самолет побольше! ";
