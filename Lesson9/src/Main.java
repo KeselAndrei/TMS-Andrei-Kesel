@@ -19,12 +19,12 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         CarFactory carFactory = new CarFactory();
-        ArrayList<Car> car = carFactory.getCreateCar();
-        for (Car value : car) {
+        ArrayList<Car> arrayList = carFactory.getCreateCar();
+        for (Car value : arrayList) {
             try {
                 value.startCar();
             } catch (CarIsNotStartException e) {
-                System.out.println("Машина не заводится выбери другую машину или попробуй еще раз!");
+                System.out.println(e.getMessage());
             }
         }
     }
