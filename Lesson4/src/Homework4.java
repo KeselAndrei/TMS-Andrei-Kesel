@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Homework4 {
     public static void main(String[] args) {
         cellDivision();
-        System.out.println(summ(2, 4));
-        System.out.println(summ(-2, -4));
-        System.out.println(summ(-2, 4));
+        System.out.println(sum(2, 4));
+        System.out.println(sum(-2, -4));
+        System.out.println(sum(-2, 4));
         mass(new int[100]);
         maxElement(new int[12]);
         array();
@@ -37,10 +37,10 @@ public class Homework4 {
         System.out.println();
     }
 
-//  2) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
-//     умножения, где a и b целые числа, вызовите метод summ  в методе main и распечатайте на консоль.
+//  2) Напишите реализацию метода sum(int a, int b), вычисляющий a*b, не пользуясь операцией
+//     умножения, где a и b целые числа, вызовите метод sum  в методе main и распечатайте на консоль.
 
-    public static int summ(int a, int b) {
+    public static int sum(int a, int b) {
         int sum = 0;
         for (int i = 0; i < Math.abs(a); i++) {
             sum += Math.abs(b);
@@ -121,17 +121,17 @@ public class Homework4 {
     public static void maxElementChange() {
         int[] mass = new int[]{4, 5, 0, 23, 77, 0, 8, 9, 101, 2};
         int max = mass[0];
-        int cangeNull = mass[0];
-        for (int j = 0; j < mass.length; j++) {
-            if (max < mass[j]) {
-                max = mass[j];
+        int changeNull = mass[0];
+        for (int k : mass) {
+            if (max < k) {
+                max = k;
             }
-            System.out.print(mass[j] + " ");
+            System.out.print(k + " ");
         }
         System.out.println();
         for (int i = 0; i < mass.length; i++) {
             if (max == mass[i]) {
-                mass[i] = cangeNull;
+                mass[i] = changeNull;
             } else {
                 mass[0] = max;
             }
@@ -152,15 +152,15 @@ public class Homework4 {
 //      1 5 6 7      4 9 5 7
 
     public static void printMatrix() {
-        Scanner heightScaner = new Scanner(System.in);
+        Scanner heightScanner = new Scanner(System.in);
         int height;
         do {
             System.out.println("Введите положительное целое число");
-            while (!heightScaner.hasNextInt()) {
+            while (!heightScanner.hasNextInt()) {
                 System.out.println("Это не число!!!");
-                heightScaner.next();
+                heightScanner.next();
             }
-            height = heightScaner.nextInt();
+            height = heightScanner.nextInt();
         } while (height <= 0);
         int[][] array = new int[height][height];
         Random random = new Random();
@@ -179,9 +179,9 @@ public class Homework4 {
                 array1[j][i] = array[i][j];
             }
         }
-        for (int j = 0; j < array1.length; j++) {
-            for (int k = 0; k < array1[j].length; k++) {
-                System.out.print(array1[j][k] + " ");
+        for (int[] ints : array1) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
             }
             System.out.println();
         }
