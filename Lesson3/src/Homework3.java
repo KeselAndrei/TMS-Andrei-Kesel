@@ -70,71 +70,71 @@ public class Homework3 {
     }
 
     public static void countDevs(int count) {
-        String programer = " программист";
+        String programmer = " программист";
         int last;
         if (0 <= count && count <= 99) {
             last = count % 10;
             if (last == 1 && count != 11) {
-                System.out.println(count + programer);
+                System.out.println(count + programmer);
             } else if (last >= 2 && last < 5 && count != 12 && count != 13 && count != 14) {
-                System.out.println(count + programer + "а");
+                System.out.println(count + programmer + "а");
             } else {
-                System.out.println(count + programer + "ов");
+                System.out.println(count + programmer + "ов");
             }
         } else if (100 <= count && count <= 999) {
             last = count % 100;
             if (last > 11 && last < 19) {
-                System.out.println(count + programer + "ов");
+                System.out.println(count + programmer + "ов");
             } else if (last % 10 > 1 && last < 5) {
-                System.out.println(count + programer + "а");
+                System.out.println(count + programmer + "а");
             } else if (last % 10 == 1 && last != 11) {
-                System.out.println(count + programer);
+                System.out.println(count + programmer);
             } else {
-                System.out.println(count + programer + "ов");
+                System.out.println(count + programmer + "ов");
             }
         } else if (1000 <= count && count <= 9999) {
             last = count % 1000;
             if (last > 11 && last < 19) {
-                System.out.println(count + programer + "ов");
+                System.out.println(count + programmer + "ов");
             } else if (last % 10 >= 2 && last < 5) {
-                System.out.println(count + programer + "а");
+                System.out.println(count + programmer + "а");
             } else if (last % 10 == 1 && last != 11) {
-                System.out.println(count + programer);
+                System.out.println(count + programmer);
             } else {
-                System.out.println(count + programer + "ов");
+                System.out.println(count + programmer + "ов");
             }
         } else if (10000 <= count && count <= 99999) {
             last = count % 10000;
             if (last > 11 && last < 19) {
-                System.out.println(count + programer + "ов");
+                System.out.println(count + programmer + "ов");
             } else if (last % 10 >= 2 && last < 5) {
-                System.out.println(count + programer + "а");
+                System.out.println(count + programmer + "а");
             } else if (last % 10 == 1 && last != 11) {
-                System.out.println(count + programer);
+                System.out.println(count + programmer);
             } else {
-                System.out.println(count + programer + "ов");
+                System.out.println(count + programmer + "ов");
             }
         } else if (100000 <= count && count <= 999999) {
             last = count % 100000;
             if (last > 11 && last < 19) {
-                System.out.println(count + programer + "ов");
+                System.out.println(count + programmer + "ов");
             } else if (last % 10 >= 2 && last < 5) {
-                System.out.println(count + programer + "а");
+                System.out.println(count + programmer + "а");
             } else if (last % 10 == 1 && last != 11) {
-                System.out.println(count + programer);
+                System.out.println(count + programmer);
             } else {
-                System.out.println(count + programer + "ов");
+                System.out.println(count + programmer + "ов");
             }
         } else if (1000000 <= count && count <= 9999999) {
             last = count % 1000000;
             if (last > 11 && last < 19) {
-                System.out.println(count + programer + "ов");
+                System.out.println(count + programmer + "ов");
             } else if (last % 10 >= 2 && last < 5) {
-                System.out.println(count + programer + "а");
+                System.out.println(count + programmer + "а");
             } else if (last % 10 == 1 && last != 11) {
-                System.out.println(count + programer);
+                System.out.println(count + programmer);
             } else {
-                System.out.println(count + programer + "ов");
+                System.out.println(count + programmer + "ов");
             }
         }
     }
@@ -150,27 +150,27 @@ public class Homework3 {
     }
 
     public static void calculateSumOfDiagonalElements() {
-        Scanner heightScaner = new Scanner(System.in);
-        Scanner widthScaner = new Scanner(System.in);
+        Scanner heightScanner = new Scanner(System.in);
+        Scanner widthScanner = new Scanner(System.in);
         int height;
         int width;
         do {
             System.out.println("Введите положительное целое число");
-            while (!widthScaner.hasNextInt() && !heightScaner.hasNext() || !widthScaner.hasNextInt() || !heightScaner.hasNext()) {
+            while (!widthScanner.hasNextInt() && !heightScanner.hasNext() || !widthScanner.hasNextInt() || !heightScanner.hasNext()) {
                 System.out.println("Это не число!!!");
-                widthScaner.next();
-                heightScaner.next();
+                widthScanner.next();
+                heightScanner.next();
             }
-            while (!widthScaner.hasNextInt()) {
+            while (!widthScanner.hasNextInt()) {
                 System.out.println("Это не число!!!");
-                widthScaner.next();
+                widthScanner.next();
             }
-            while (!heightScaner.hasNextInt()) {
+            while (!heightScanner.hasNextInt()) {
                 System.out.println("Это не число!!!");
-                heightScaner.next();
+                heightScanner.next();
             }
-            width = widthScaner.nextInt();
-            height = heightScaner.nextInt();
+            width = widthScanner.nextInt();
+            height = heightScanner.nextInt();
         } while (width <= 0 || height <= 0);
         int[][] array = new int[width][height];
         Random random = new Random();
@@ -189,27 +189,27 @@ public class Homework3 {
     }
 
     public static void printMatrix() {
-        Scanner heightScaner = new Scanner(System.in);
-        Scanner widthScaner = new Scanner(System.in);
+        Scanner heightScanner = new Scanner(System.in);
+        Scanner widthScanner = new Scanner(System.in);
         int height;
         int width;
         do {
             System.out.println("Введите положительное целое число");
-            while (!widthScaner.hasNextInt() && !heightScaner.hasNext() || !widthScaner.hasNextInt() || !heightScaner.hasNext()) {
+            while (!widthScanner.hasNextInt() && !heightScanner.hasNext() || !widthScanner.hasNextInt() || !heightScanner.hasNext()) {
                 System.out.println("Это не число!!!");
-                widthScaner.next();
-                heightScaner.next();
+                widthScanner.next();
+                heightScanner.next();
             }
-            while (!widthScaner.hasNextInt()) {
+            while (!widthScanner.hasNextInt()) {
                 System.out.println("Это не число!!!");
-                widthScaner.next();
+                widthScanner.next();
             }
-            while (!heightScaner.hasNextInt()) {
+            while (!heightScanner.hasNextInt()) {
                 System.out.println("Это не число!!!");
-                heightScaner.next();
+                heightScanner.next();
             }
-            width = widthScaner.nextInt();
-            height = heightScaner.nextInt();
+            width = widthScanner.nextInt();
+            height = heightScanner.nextInt();
         } while (width <= 0 || height <= 0);
         int[][] array = new int[width][height];
         Random random = new Random();
