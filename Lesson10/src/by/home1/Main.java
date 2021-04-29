@@ -1,16 +1,15 @@
 package by.home1;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Main {
-    public static ArrayList<String> arrayList;
-
     public static void main(String[] args) {
         System.out.println(stripSubstringFromString("вымысел", "ы", "с"));
         System.out.println(getReplace("Стоматолог машину мыл"));
         System.out.println(stripSubstringFromString("навымысел", "с", "л"));
         System.out.println(getReplace("мама мыла раму"));
-        arrayList = new ArrayList<>();
+        ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add("казаК");
         arrayList.add("дед");
         arrayList.add("ель");
@@ -18,7 +17,7 @@ public class Main {
         arrayList.add("алла");
         arrayList.add("шалаш");
         arrayList.add("Маам");
-        printPalindrome();
+        printPalindrome(arrayList);
     }
 
     private static String getReplace(String str) {
@@ -31,22 +30,15 @@ public class Main {
         return str.substring(i, j);
     }
 
-    private static void printPalindrome() {
-        for (String s : getPalindrome(arrayList)) {
-            System.out.println(s);
+    private static void printPalindrome(ArrayList<String> arrayList) {
+        for (String s : arrayList) {
+            if (isPalindrome(s.toLowerCase(Locale.ROOT))) {
+                System.out.println(s);
+            }
         }
     }
 
-    private static ArrayList<String> getPalindrome(ArrayList<String> arrayList) {
-        ArrayList<String> arrayList1 = new ArrayList<>();
-        StringBuilder stringBuilder;
-        for (String s5 : arrayList) {
-            String s6 = s5.toLowerCase();
-            stringBuilder = new StringBuilder(s6);
-            if (stringBuilder.reverse().toString().equals(s6)) {
-                arrayList1.add(s6);
-            }
-        }
-        return arrayList1;
+    private static boolean isPalindrome(String str) {
+        return new StringBuilder(str).reverse().toString().equals(str);
     }
 }
