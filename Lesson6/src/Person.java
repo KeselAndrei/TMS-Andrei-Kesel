@@ -16,9 +16,7 @@ public class Person {
     public Person(String name, int age, String sex, Address address) {
         this.name = name;
         this.age = age;
-        if (MALE.equals(sex) || FEMALE.equals(sex)) {
-            this.sex = sex;
-        }
+        this.sex = sex;
         this.address = address;
     }
 }
