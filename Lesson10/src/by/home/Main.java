@@ -10,7 +10,7 @@ public class Main {
         FileWriter writer = new FileWriter("d:\\Intellij IDEA Community Edition\\" +
                 "TMS-Andrei-Kesel\\Lesson10\\src\\by\\home\\newText.txt");
         for (String value : s) {
-            if (TextFormat.getPalindrome(value)) {
+            if (TextFormat.isPalindrome(value)) {
                 writer.write(value + "\n");
                 writer.flush();
             }
@@ -19,5 +19,6 @@ public class Main {
                 writer.flush();
             }
         }
+        writer.close();
     }
 }
