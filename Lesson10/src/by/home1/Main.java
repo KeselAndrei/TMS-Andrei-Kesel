@@ -1,7 +1,6 @@
 package by.home1;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,19 +25,19 @@ public class Main {
 
     private static String stripSubstringFromString(String str, String ch1, String ch2) {
         int i = str.indexOf(ch1);
-        int j = str.indexOf(ch2) + 1;
+        int j = str.lastIndexOf(ch2) + 1;
         return str.substring(i, j);
     }
 
     private static void printPalindrome(ArrayList<String> arrayList) {
         for (String s : arrayList) {
-            if (isPalindrome(s.toLowerCase(Locale.ROOT))) {
+            if (isPalindrome(s)) {
                 System.out.println(s);
             }
         }
     }
 
     private static boolean isPalindrome(String str) {
-        return new StringBuilder(str).reverse().toString().equals(str);
+        return new StringBuilder(str).reverse().toString().equalsIgnoreCase(str);
     }
 }

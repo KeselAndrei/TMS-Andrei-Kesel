@@ -30,9 +30,8 @@ public class TextFormat {
         StringBuilder stringBuilder;
         for (String s1 : str) {
             isChek = false;
-            String s2 = s1.toLowerCase();
-            stringBuilder = new StringBuilder(s2);
-            if (stringBuilder.reverse().toString().equals(s2) && s1.length() > 1) {
+            stringBuilder = new StringBuilder(s1);
+            if (stringBuilder.reverse().toString().equalsIgnoreCase(s1) && s1.length() > 1) {
                 isChek = true;
                 break;
             }
