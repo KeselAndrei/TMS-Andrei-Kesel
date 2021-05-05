@@ -10,7 +10,7 @@ public class Main4 {
         Car car = new Car("Mercedes", 200, 5000);
         ObjectMapper mapper = new ObjectMapper();
         File file = new File("Lesson11/resources/Car.json");
-        mapper.writeValue(new File("Lesson11/resources/Car.json"), car);
+        mapper.writeValue(file, car);
         car = mapper.readValue(file, Car.class);
         System.out.println(car.toString());
     }
