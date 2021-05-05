@@ -31,7 +31,7 @@ public class TextFormat {
         for (String s1 : str) {
             isChek = false;
             stringBuilder = new StringBuilder(s1);
-            if (stringBuilder.reverse().toString().equalsIgnoreCase(s1) && s1.length() > 1) {
+            if (s1.length() > 1 && stringBuilder.reverse().toString().equalsIgnoreCase(s1)) {   
                 isChek = true;
                 break;
             }
