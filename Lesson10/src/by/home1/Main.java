@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(stripSubstringFromString("вымысел", "ы", "с"));
+        System.out.println(stripSubstringFromString("вымыссел", "ы", "с"));
         System.out.println(getReplace("Стоматолог машину мыл"));
         System.out.println(stripSubstringFromString("навымысел", "с", "л"));
         System.out.println(getReplace("мама мыла раму"));

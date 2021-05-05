@@ -1,5 +1,3 @@
-import lombok.ToString;
-
 import java.util.ArrayList;
 
 //        Домашка: 6 урок
@@ -19,7 +17,6 @@ import java.util.ArrayList;
 //
 //        5) Создать класс Main, наполнить PersonRegistry людьми, по желанию можно создавать людей через консоль
 
-@ToString
 public class Main {
     public static void main(String[] args) {
         ArrayList<Person> arrayList = new ArrayList<>();
